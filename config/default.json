@@ -1,0 +1,58 @@
+{
+    "domain": "http://localhost:3000",
+    "permissions": {
+        "owner": {
+            "owner": true,
+            "admin": true,
+            "user": true,
+            "developer": true
+        },
+        "admin": {
+            "owner": false,
+            "admin": true,
+            "user": true,
+            "developer": false
+        },
+        "user": {
+            "owner": false,
+            "admin": false,
+            "user": true,
+            "developer": false
+        },
+        "developer": {
+            "owner": false,
+            "admin": false,
+            "user": true,
+            "developer": true
+        }
+    },
+    "token": {
+        "duration": 604800 // 1 week
+    },
+    "throttle": {
+        "api": {
+            "max": 1000,
+            "windowMs": 3600000,
+            "headers": true,
+            "message": "Too many requests from this IP, please try again in an hour!"
+        },
+        "signup": {
+            "max": 5,
+            "windowMs": 3600000,
+            "headers": true,
+            "message": "you have reached the maximum number of signups, please try again in an hour!"
+        },
+        "signin": {
+            "max": 5,
+            "windowMs": 3600000,
+            "headers": true,
+            "message": "you have reached the maximum number of signins, please try again in a minute!"
+        },
+        "password_reset": {
+            "max": 3,
+            "windowMs": 3600000,
+            "headers": true,
+            "message": "you have reached the maximum number of password resets, please try again in an hour!"
+        }
+    }
+}
