@@ -1,5 +1,5 @@
-require("dotenv").config();
-const express = require("express");
+require('dotenv').config();
+const express = require('express');
 const config = require('config');
 const throttle = config.get('throttle');
 const limiter = require('express-rate-limit');
@@ -11,7 +11,7 @@ app.use(express.json());
 /* it the middleware to parse url-encoded when submit the form data given true allow us to deep nesting the data
     with the help the of it you can access the data via req.body in form data */
 app.use(express.urlencoded({ extended: true }));
-app.set("trust proxy", 1);
+app.set('trust proxy', 1);
 // Size limits for security
 app.use(express.json({ limit: '10kb' }));
 
@@ -27,5 +27,5 @@ app.use(function (err, req, res, next) {
 });
 
 const server = app.listen(PORT, () => {
-  console.log(`Welcome to server port: ${PORT}`);
+    console.log(`Welcome to server port: ${PORT}`);
 });

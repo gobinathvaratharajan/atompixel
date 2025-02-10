@@ -1,9 +1,9 @@
-const express = require("express");
-const config = require("config");
-const throttle = config.get("throttle");
-const limiter = require("express-rate-limit");
-const accountController = require('../controller/accountController')
-const api = express.Router()
+const express = require('express');
+const config = require('config');
+const throttle = config.get('throttle');
+const limiter = require('express-rate-limit');
+const accountController = require('../controller/accountController');
+const api = express.Router();
 
 // Error handling
 const use = (fn) => (req, res, next) =>
